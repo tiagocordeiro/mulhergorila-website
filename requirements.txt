@@ -13,7 +13,7 @@ whitenoise==4.1.2
 
 # Cloudinary
 chardet==3.0.4
-cloudinary==1.15.0
+cloudinary==1.16.0
 django-cloudinary-storage==0.2.3
 idna==2.8
 mock==2.0.0
