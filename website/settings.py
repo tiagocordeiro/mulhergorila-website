@@ -94,6 +94,9 @@ DATABASES = {
     'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
 }
 
+# Required by Django > 3.2
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -153,7 +156,7 @@ CLOUDINARY_STORAGE = {
     'STATICFILES_MANIFEST_ROOT': os.path.join(BASE_DIR, 'static-manifest-directory')
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticCloudinaryStorage'
 
 # Sentry
 sentry_sdk.init(dsn=config('SENTRY_DSN'), integrations=[DjangoIntegration()])
